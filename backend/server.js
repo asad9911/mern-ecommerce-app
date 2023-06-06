@@ -14,7 +14,7 @@ import errorMiddleware from './middleware/error.js';
 import path from "path";
 import { fileURLToPath } from 'url';
 
-
+const PORT = process.env.PORT || 4000;
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
   dotenv.config({ path: "config/config.env" });
@@ -31,13 +31,6 @@ app.use(cookieParser());
 app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload());
-
-// to redirect frontend
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -57,6 +50,12 @@ app.use('/api/v1', categoryRoute);
 app.use('/api/v1', userRoute);
 app.use('/api/v1', orderRoute);
 app.use('/api/v1', paymentRoute);
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 app.use(errorMiddleware);
 
