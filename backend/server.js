@@ -11,17 +11,33 @@ import userRoute from './routes/userRoutes.js';
 import orderRoute from './routes/orderRoutes.js';
 import paymentRoute from './routes/paymentRoutes.js';
 import errorMiddleware from './middleware/error.js';
+import path from "path";
+import { fileURLToPath } from 'url';
 
-dotenv.config({ path: "config/config.env" });
+
+
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  dotenv.config({ path: "config/config.env" });
+}
 connectDatabase();
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.json());
+app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload());
+
+// to redirect frontend
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
