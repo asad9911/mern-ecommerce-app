@@ -1,0 +1,381 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  margin: 0;
+  scroll-behavior: smooth;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.header-menu ul li{
+  padding: 14px 10px;
+}
+.swiper-button-prev,.swiper-button-next{
+  background: #f2a100;
+    border-radius: 100%;
+    height: 30px !important;
+    width: 30px !important;
+}
+.swiper-button-prev:after,.swiper-button-next:after{
+  font-size: 16px !important;
+    color: #fff;
+}
+.swiper-slide-thumb-active{
+  border: 2px solid #f2a100;
+}
+.single-form .singleSelect > div{
+  border-radius: 0;
+}
+.single-form .singleSelect > div > div{
+  font-size: 14px;
+  font-style: italic;
+  padding: 0 20px;
+  border-radius: 0;
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+
+.loading > div {
+  width: 10vmax;
+  height: 10vmax;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.719);
+  border-radius: 50%;
+  animation: loadingRotate 800ms linear infinite;
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+.page-pagination ul{
+  justify-content: center;
+}
+.widget-price .MuiSlider-root{
+  color: #f2a100;
+}
+.checkbox-items li span.active{
+    color: #f2a100;
+    transition: .2s;
+}
+.checkbox-items li span{
+  font-weight: 600;
+    font-size: 16px;
+    transition: .2s;
+    color: #666;
+    font-family: "Rajdhani",sans-serif;
+    cursor: pointer;
+}
+.header-area{
+  padding: 10px 0;
+}
+.passwordField{
+  position: relative;
+}
+.passwordField svg{
+  position: absolute;
+  right: 10px;
+  color: grey;
+    top: 18px;
+}
+#registerImage{
+  position: relative;
+  margin: 30px auto;
+    width: 100px;
+}
+#registerImage > img {
+  width: 100px;
+    border-radius: 100%;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid #d7d7d7;
+}
+#registerImage > input {
+  display: flex;
+    padding: 0%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.speedDial{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
+}
+.speedDialIcon{
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+.profileContainer,.update_profile,.update_password,.login-register-panel,.forgot_password,.cart_sec,.orderDetailsPage,.dashboard-panel{
+  padding: 180px 0 100px;
+}
+.profile_image{
+  display: flex;
+  flex-direction: column;
+}
+.profile_image img{
+  width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 30px 0;
+}
+.profile_content > div{
+  margin: 20px 0;
+}
+.profile_content > div a:first-child{
+  margin-right: 10px;
+}
+@media only screen and (max-width: 992px){
+  .profile_content > div a:first-child{
+    margin-bottom: 10px;
+  }
+}
+.product-details-description .product-quantity input{
+  width: 50px;
+}
+.single-form select,.paymentContainer .paymentInput{
+  width: 100%;
+    height: 50px;
+    padding: 0 20px 0 40px;
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+    transition: all .3s linear;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    background-color: #fff;
+}
+.single-form select:focus{
+  border-color: #f2a100;
+    outline: none;
+}
+.shippingBox .single-form{
+  position: relative;
+}
+.shippingBox .single-form svg,.paymentContainer .MuiSvgIcon-root{
+  position: absolute;
+    top: 16px;
+    left: 10px;
+    font-size: 18px;
+}
+.shippingBox .single-form input:not([type=checkbox]):not([type=radio]){
+  padding: 0 20px 0 40px;
+}
+.confirmOrderPage{
+    padding-top: 30px;
+}
+.confirmshippingArea,.orderSummary,.confirmCartItems,.orderDetailsContainerBox,.orderDetailsCartItems{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.confirmshippingAreaBox,.confirmCartItemsContainer{
+  padding-top: 20px;
+}
+.confirmshippingAreaBox p{
+  margin: 0;
+  padding-right: 10px;
+}
+.confirmshippingAreaBox > div{
+  padding-bottom: 4px;
+  display: flex;
+}
+.confirmCartItems > div img{
+  width: 70px;
+    height: 70px;
+}
+.confirmCartItemsContainer > div,.orderSummaryTotal,.orderSummary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirmCartItemsContainer h6{
+  margin-right: auto;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+.orderSummary h3{
+  padding-bottom:20px;
+}
+.orderSummary p{
+  margin: 0;
+  padding-bottom: 10px;
+}
+.orderSummary button{
+  margin-top: 10px;
+  width: 100%;
+}
+.confirmCartItemsContainer > div{
+  margin-bottom: 10px;
+}
+.confirmCartItemsContainer {
+  height: 250px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+.confirmCartItemsContainer::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #000;
+}
+
+.confirmCartItemsContainer::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #f2a100;
+}
+
+.confirmCartItemsContainer::-webkit-scrollbar-thumb
+{
+  background-color: #f2a100;
+  border: 2px solid #f2a100;
+}
+.paymentForm > div{
+  position: relative;
+  margin-bottom: 20px;
+}
+.paymentInput > div{
+  top: 16px;
+}
+.paymentForm h3{
+  padding-bottom: 30px;
+    padding-top: 20px;
+}
+.InputContainer .InputElement:focus .paymentContainer .paymentInput{
+  border: 1px solid #f2a100;
+}
+.orderSuccess{
+  display: flex;
+  align-items: center;
+    flex-direction: column;
+}
+.orderSuccess svg{
+  font-size: 90px;
+  color: #f2a100; 
+}
+.orderSuccess h3{
+  margin: 10px 0 40px;
+}
+.orderDetailsCartItemsContainer > div > img {
+  width: 70px;
+    height: 70px;
+}
+.orderDetailsContainerBox > div{
+  display: flex;
+}
+.orderDetailsContainerBox p{
+  margin: 0;
+  padding-bottom: 4px;
+}
+.orderDetailsContainerBox h4{
+  padding-bottom: 20px;
+}
+.orderDetailsContainerBox span{
+  padding-left: 14px;
+}
+.orderDetailsContainer .orderDetailsContainerBox{
+  height: 100%;
+}
+.orderDetailsCartItemsContainer > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.orderDetailsCartItemsContainer a{
+  margin-right: auto;
+  margin-left: 10px;
+}
+.dashboard-panel .sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid darkgrey;
+}
+.dashboard-panel .sidebar a{
+  padding: 10px 0;
+}
+.dashboard-panel .sidebar p{
+  font-weight: 500;
+}
+.dashboard-panel .sidebar .MuiCollapse-wrapperInner{
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-panel .sidebar .MuiTypography-body1{
+font-size: inherit;
+    font-family: unset;
+    font-weight: 500;
+}
+.dashboardSummaryBox2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.dashboardSummaryBox2 p{
+  margin: 0;
+}
+.dashboardSummaryBox2 a{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 22%;
+}
+.dashboardSummaryBox2 span{
+  font-weight: 500;
+}
+.createProductForm .single-form{
+  position: relative;
+}
+.createProductForm .single-form svg{
+  position: absolute;
+    top: 16px;
+    font-size: 20px;
+    left: 10px;
+}
+.createProductForm .single-form input:not([type=checkbox]):not([type=radio]),.createProductForm .single-form textarea{
+  padding: 0 20px 0px 40px;
+}
+.createProductForm .single-form textarea{
+  padding-top: 10px;
+  height: 150px;
+}
+#createProductFormImage img,#createCateFormImage img{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.MuiPaper-root{
+  margin-top: 20px;
+  padding: 10px;
+}
+.updatePasswordForm .single-form{
+  position: relative;
+}
+.password_icon{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
