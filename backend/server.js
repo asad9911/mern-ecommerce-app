@@ -19,7 +19,6 @@ const PORT = process.env.PORT || 4000;
 if (process.env.NODE_ENV !== "PRODUCTION") {
   dotenv.config({ path: "config/config.env" });
 }
-connectDatabase();
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -60,6 +59,7 @@ app.get("*", (req, res) => {
 app.use(errorMiddleware);
 
 const server = app.listen(process.env.PORT, () =>{
+  connectDatabase();
 	console.log(`Server is running on ${process.env.PORT}`);
 });
 
