@@ -134,7 +134,7 @@ const Shop = () => {
                                                         <Link to={`/product/${product._id}`}><img src={product.images[0]?.url} width="270" height="303" alt="product" /></Link>
                                                         <div className="product-content">
                                                             <h4 className="title">
-                                                                <Link to={`/product/${product._id}`}>{product.name}{/*{product?.category}*/}</Link>
+                                                                <Link to={`/product/${product._id}`}>{product.name} {/*{product?.category}*/}</Link>
                                                             </h4>
                                                             <div className="price">
                                                                 <span className="sale-price">{`$${product?.price}`}</span>

@@ -53,7 +53,7 @@ export const getAdminCategories = catchAsyncErrors(async (req, res, next) => {
 
 // Get All category (Admin)
 export const getAllCategories = catchAsyncErrors(async (req, res, next) => {
-  const categories = await Category.find();
+  const categories = await Category.find({ status: 'show' });
 
   res.status(200).json({
     success: true,

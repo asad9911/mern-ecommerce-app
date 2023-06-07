@@ -21,6 +21,11 @@ const categorySchema = new mongoose.Schema({
       },
     },
   ],
+  status: {
+    type: String,
+    required: [true, "Category must belong to a status"],
+    default: 'show',
+  },
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",

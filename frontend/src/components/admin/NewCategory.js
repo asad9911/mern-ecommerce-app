@@ -23,6 +23,7 @@ const NewCategory = () => {
 	const { loading, error, success } = useSelector((state) => state.newCategory);
 
 	const [name, setName] = useState("");
+	const [status, setStatus] = useState("");
 	const [description, setDescription] = useState("");
 	const [images, setImages] = useState([]);
 	const [imagesPreview, setImagesPreview] = useState([]);
@@ -55,6 +56,7 @@ const NewCategory = () => {
 	    const myForm = new FormData();
 
 	    myForm.set("name", name);
+	    myForm.set("status", status);
 	    myForm.set("description", description);
 	    images.forEach((image) => {
 	      myForm.append("images", image);
@@ -115,6 +117,14 @@ const NewCategory = () => {
 							              />
 							            </div>
 							            
+							            <div className="single-form">
+							              <AccountTreeIcon />
+							              <select onChange={(e) => setStatus(e.target.value)}>
+							                <option value="">Choose Status</option>
+							                <option value="show">Show</option>
+							                <option value="hide">Hide</option>
+							              </select>
+							            </div>
 							            
 
 							            <div className="single-form">

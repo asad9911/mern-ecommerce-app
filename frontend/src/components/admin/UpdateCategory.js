@@ -26,6 +26,7 @@ const UpdateCategory = () => {
 	const { loading, error: updateError, isUpdated } = useSelector((state) => state.category);
 
 	const [name, setName] = useState("");
+	const [status, setStatus] = useState("");
 	const [description, setDescription] = useState("");
 	const [images, setImages] = useState([]);
 	const [oldImages, setOldImages] = useState([]);
@@ -74,6 +75,7 @@ const UpdateCategory = () => {
 	    const myForm = new FormData();
 
 	    myForm.set("name", name);
+	    myForm.set("status", status);
 	    myForm.set("description", description);
 	    images.forEach((image) => {
 	      myForm.append("images", image);
@@ -135,6 +137,14 @@ const UpdateCategory = () => {
 							            </div>
 							            
 							          
+							          	<div className="single-form">
+							              <AccountTreeIcon />
+							              <select value={status} onChange={(e) => setStatus(e.target.value)}>
+							                <option value="">Choose Status</option>
+							                <option value="show">Show</option>
+							                <option value="hide">Hide</option>
+							              </select>
+							            </div>
 
 
 							            <div className="single-form">

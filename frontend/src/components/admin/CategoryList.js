@@ -63,6 +63,12 @@ const CategoryList = () => {
 	        Header: () => <span>Image</span>, //optional custom header render
 	      },
 	      {
+	        accessorFn: (row) => row.status, //alternate way
+	        id: 'status', //id required if you use accessorFn instead of accessorKey
+	        header: 'Status',
+	        Header: () => <span>Status</span>, //optional custom header render
+	      },
+	      {
 	        accessorFn: (row) => <span>
 	                            <Link to={`/admin/update-category/${row._id}`}>
 	                              <EditIcon />
